@@ -1,49 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Base styles */
 body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.5;
     min-height: 100vh;
     background: #f3f3f3;
     flex-direction: column;
     margin: 0;
+    padding: 0 15px; /* Add space on mobile */
 }
 
+/* Main container */
 .main {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    padding: 10px 20px;
+    padding: 20px;
     transition: transform 0.2s;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
 }
 
+/* Heading */
 h1 {
     color: #007ac6;
     font-size: 25px;
-    margin-bottom: 10px;    
-    font-family: 'Roboto', sans-serif;
+    margin: 0 0 10px;
     font-weight: 700;
-    text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: 0;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
+
+/* Labels */
 label {
     display: block;
-    width: 10%;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin: 10px 0 5px;
     text-align: left;
     color: #555;
     font-weight: bold;
 }
 
+/* Inputs */
 input {
     display: block;
     width: 100%;
@@ -54,6 +58,7 @@ input {
     border-radius: 5px;
 }
 
+/* Button */
 button {
     background-color: #007BFF;
     color: white;
@@ -69,8 +74,26 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+/* Wrapper if needed */
 .wrap {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+/* ✅ Responsive for phone screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .main {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 15px;
+    }
 }

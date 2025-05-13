@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .notification {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .notification.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .notification.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body class="body">
+    <div class="main">
+        <h1>HESON STORE</h1>
+        <form id="loginForm">
+            <label for="First">Username:</label>
+            <input type="text" id="First" name="First" placeholder="Enter your Username" required>
+            <label for="Last">Password:</label>
+            <input type="password" id="Last" name="Last" placeholder="Enter your Password" required>
+            <button type="submit">Login</button>
+            <div id="notification" class="notification"></div>
+            <p>Don't have an account? <a href="https://t.me/tienbip2626" target="_blank">Register here</a></p>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2025 HESON STORE. All rights reserved | Follow us on <a href="https://t.me/hesonstore">Telegram</a> </p>
+    </footer>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('First').value;
+            const password = document.getElementById('Last').value;
+            const notification = document.getElementById('notification');
+            if (username === 'Mark' && password === '1234') {
+                notification.textContent = 'Login successful!';
+                notification.className = 'notification success';
+                notification.style.display = 'block';
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1000);
+            } else {
+                notification.textContent = 'Wrong password or username!';
+                notification.className = 'notification error';
+                notification.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
